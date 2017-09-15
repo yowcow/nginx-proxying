@@ -1,0 +1,17 @@
+nginx:
+  image: nginx
+  volumes:
+    - ./nginx/myhost.conf:/etc/nginx/conf.d/myhost.conf:ro
+  ports:
+    - 8888:80
+  links:
+    - app1
+    - app2
+
+app1:
+  build: ./app
+  command: ["./app", "-addr", ":5001"]
+
+app2:
+  build: ./app
+  command: ["./app", "-addr", ":5002"]
