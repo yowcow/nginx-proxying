@@ -1,0 +1,15 @@
+sudo: required
+
+language: go
+
+services:
+  - docker
+
+before_script:
+  - docker-compose up --build -d
+
+script:
+  - make test
+
+after_script:
+  - docker-compose down

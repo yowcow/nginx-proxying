@@ -19,7 +19,7 @@ func main() {
 		logger.Print(u)
 		w.Header().Set("content-type", "text/plain; charset=UTF-8")
 		w.WriteHeader(http.StatusOK)
-		w.Write([]byte("Server Addr: " + *addr + "\nRequested URL: " + u + "\n\n"))
+		w.Write([]byte("Server Addr: " + *addr + "\nRequested URL: " + u + "\n"))
 	})
 
 	fmt.Println("-- Booting app listening to addr", *addr)

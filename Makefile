@@ -1,5 +1,5 @@
 all:
-	docker-compose up -d && docker-compose logs -f
+	docker-compose up --build -d && docker-compose logs -f
 
 stop:
 	docker-compose stop
@@ -7,4 +7,7 @@ stop:
 clean:
 	docker-compose down
 
-.PHONY: all stop clean
+test:
+	go test
+
+.PHONY: all stop clean test
